@@ -12,8 +12,6 @@ This project involves building a data pipeline to extract data from the NYC 311 
 4. [Installation and Setup](#installation-and-setup)
 5. [Data Pipeline Steps](#data-pipeline-steps)
 6. [Usage](#usage)
-7. [Contributing](#contributing)
-8. [License](#license)
 
 ## Project Description
 
