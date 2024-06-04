@@ -25,7 +25,7 @@ The data pipeline automates the process of extracting, transforming, and loading
 
 ## Architecture
 
-![Architecture Diagram](path/to/architecture-diagram.png)
+![Architecture Diagram](/home/ubuntu/NYC 311 ETL Flow.png)
 
 The architecture consists of the following components:
 
