@@ -1,5 +1,3 @@
-# Lambda function to copy raw data toan intermediate S3 bucket
-
 import boto3
 import json
 
@@ -26,7 +24,12 @@ def lambda_handler(event, context):
 
             print(f"Copied object: {object_key}")
 
+            # Delete the object from the source bucket after copying
+            s3_client.delete_object(Bucket=source_bucket, Key=object_key)
+
+            print(f"Deleted object from source bucket: {object_key}")
+
     return {
         'statusCode': 200,
-        'body': json.dumps('Data copied successfully!')
+        'body': json.dumps('Data moved successfully!')
     }

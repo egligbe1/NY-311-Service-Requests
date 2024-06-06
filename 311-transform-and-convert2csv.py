@@ -1,5 +1,3 @@
-# Lambda function to transform raw data into cleaned CSV format and saved in another S3 bucket
-
 import boto3
 import json
 import pandas as pd
@@ -14,7 +12,7 @@ logging.basicConfig(level=logging.INFO)
 s3_client = boto3.client('s3')
 
 def lambda_handler(event, context):
-    """Processes JSON data from S3, converts it to CSV, and uploads to target bucket."""
+    """Processes JSON data from S3, converts it to CSV, and uploads to target bucket, then deletes the source object."""
     
     # Define source and destination bucket names
     source_bucket = "311-intermediate-bucket"
@@ -115,9 +113,20 @@ def lambda_handler(event, context):
                     'statusCode': 500,
                     'body': json.dumps('Error uploading CSV to S3.')
                 }
+            
+            # Delete the JSON object from the source bucket
+            try:
+                s3_client.delete_object(Bucket=source_bucket, Key=object_key)
+                logging.info(f"Successfully deleted {object_key} from {source_bucket}")
+            except botocore.exceptions.ClientError as e:
+                logging.error(f"Error deleting object from S3: {e}")
+                return {
+                    'statusCode': 500,
+                    'body': json.dumps('Error deleting object from S3.')
+                }
     
     return {
         'statusCode': 200,
-        'body': json.dumps('CSV file successfully created and uploaded.')
+        'body': json.dumps('CSV file successfully created, uploaded, and source object deleted.')
     }
 

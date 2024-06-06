@@ -21,11 +21,11 @@ dt_now_string = now.strftime("%d%m%Y%H%M%S")
 
 # Calculate the date range
 today = datetime.now()
-two_weeks_ago = today - timedelta(days=14)
+seven_days_ago = today - timedelta(days=7)
 
 # Format the dates in ISO format
 today_str = today.strftime('%Y-%m-%dT%H:%M:%S')
-seven_days_ago_str = two_weeks_ago.strftime('%Y-%m-%dT%H:%M:%S')
+seven_days_ago_str = seven_days_ago.strftime('%Y-%m-%dT%H:%M:%S')
 
 def extract_311_data(**kwargs):
     url = kwargs['url']
@@ -68,7 +68,7 @@ with DAG(
         task_id='extract_311_data',
         python_callable=extract_311_data,
         op_kwargs={
-            'url': "https://data.cityofnewyork.us/resource/erm2-nwe9.json?""$limit=10000&"f"$where=created_date between '{seven_days_ago_str}' and '{today_str}'",
+            'url': f"https://data.cityofnewyork.us/resource/erm2-nwe9.json?$limit=50000&$where=created_date between '{seven_days_ago_str}' and '{today_str}'&$order=created_date DESC",
             'date_string': dt_now_string
         }
     )
@@ -84,7 +84,7 @@ with DAG(
         bucket_name=s3_bucket,
         aws_conn_id='aws_connection_id',
         wildcard_match=False,
-        timeout=900,
+        timeout=300,
         poke_interval=20,
     )
 
@@ -145,6 +145,11 @@ with DAG(
             SELECT * FROM sr.staging_service_requests;
         """,
     )
+    
+    delete_csv_from_s3_task = BashOperator(
+    task_id='delete_csv_from_s3',
+    bash_command='aws s3 rm s3://311-cleaned-bucket/{{ ti.xcom_pull("extract_311_data")[1] }}',
+    )
 
     truncate_staging_table_task = PostgresOperator(
         task_id='truncate_staging_table',
@@ -153,4 +158,4 @@ with DAG(
     )
 
 # Set the task dependencies
-extract_311_data_task >> load_to_s3_task >> is_file_in_s3_available_task >> create_staging_table_task >> transfer_s3_to_redshift_staging_task >> delete_existing_records_task >> insert_new_records_task >> truncate_staging_table_task
+extract_311_data_task >> load_to_s3_task >> is_file_in_s3_available_task >> create_staging_table_task >> transfer_s3_to_redshift_staging_task >> delete_existing_records_task >> insert_new_records_task >> delete_csv_from_s3_task >> truncate_staging_table_task
