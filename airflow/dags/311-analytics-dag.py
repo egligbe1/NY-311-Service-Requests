@@ -1,5 +1,7 @@
+
 from airflow import DAG
 from datetime import datetime, timedelta
+from airflow.utils.dates import days_ago
 import requests
 import json
 from airflow.operators.python import PythonOperator
@@ -16,6 +18,14 @@ raw_s3_bucket = '311-raw-bucket'
 # Create a unique timestamp for file naming
 now = datetime.now()
 dt_now_string = now.strftime("%d%m%Y%H%M%S")
+
+# Calculate the date range
+today = datetime.now()
+two_weeks_ago = today - timedelta(days=14)
+
+# Format the dates in ISO format
+today_str = today.strftime('%Y-%m-%dT%H:%M:%S')
+seven_days_ago_str = two_weeks_ago.strftime('%Y-%m-%dT%H:%M:%S')
 
 def extract_311_data(**kwargs):
     url = kwargs['url']
@@ -40,11 +50,11 @@ def extract_311_data(**kwargs):
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
-    'start_date': datetime(2023, 5, 22),
+    'start_date': days_ago(1),
     'email_on_failure': False,
     'email_on_retry': False,
-    'retries': 2,
-    'retry_delay': timedelta(seconds=15)
+    'retries': 3,
+    'retry_delay': timedelta(minutes=1)
 }
 
 with DAG(
@@ -58,7 +68,7 @@ with DAG(
         task_id='extract_311_data',
         python_callable=extract_311_data,
         op_kwargs={
-            'url': f"https://data.cityofnewyork.us/resource/erm2-nwe9.json?$limit=1500",
+            'url': "https://data.cityofnewyork.us/resource/erm2-nwe9.json?""$limit=10000&"f"$where=created_date between '{seven_days_ago_str}' and '{today_str}'",
             'date_string': dt_now_string
         }
     )
@@ -71,10 +81,10 @@ with DAG(
     is_file_in_s3_available_task = S3KeySensor(
         task_id='is_file_in_s3_available',
         bucket_key='{{ ti.xcom_pull("extract_311_data")[1] }}',
-        bucket_name=raw_s3_bucket,
+        bucket_name=s3_bucket,
         aws_conn_id='aws_connection_id',
         wildcard_match=False,
-        timeout=300,
+        timeout=900,
         poke_interval=20,
     )
 
