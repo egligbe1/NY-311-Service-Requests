@@ -4430,3 +4430,328 @@
 2024-05-22 17:16:46,987 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'load_to_s3', 'scheduled__2023-10-29T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
 2024-05-22 17:16:50,920 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'is_file_in_s3_available', 'scheduled__2023-10-28T00:00:00+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
 2024-05-22 17:20:59,954 INFO - Exiting gracefully upon receiving signal 15
+2024-06-07 04:29:35,722 INFO - Task context logging is enabled
+2024-06-07 04:29:35,724 INFO - Loaded executor: SequentialExecutor
+2024-06-07 04:29:40,799 INFO - Starting the scheduler
+2024-06-07 04:29:40,800 INFO - Processing each file at most -1 times
+2024-06-07 04:29:40,806 INFO - Launched DagFileProcessorManager with pid: 14721
+2024-06-07 04:29:40,809 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 04:29:40,814 INFO - Configured default timezone UTC
+2024-06-07 04:34:40,931 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 04:34:43,404 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.load_to_s3 manual__2024-06-07T04:34:27.981682+00:00 [scheduled]>
+2024-06-07 04:34:43,407 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 04:34:43,407 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.load_to_s3 manual__2024-06-07T04:34:27.981682+00:00 [scheduled]>
+2024-06-07 04:34:43,417 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='load_to_s3', run_id='manual__2024-06-07T04:34:27.981682+00:00', try_number=1, map_index=-1) to executor with priority 8 and queue default
+2024-06-07 04:34:43,418 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'load_to_s3', 'manual__2024-06-07T04:34:27.981682+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:34:43,423 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'load_to_s3', 'manual__2024-06-07T04:34:27.981682+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:34:48,663 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='load_to_s3', run_id='manual__2024-06-07T04:34:27.981682+00:00', try_number=1, map_index=-1)
+2024-06-07 04:34:48,673 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=load_to_s3, run_id=manual__2024-06-07T04:34:27.981682+00:00, map_index=-1, run_start_date=2024-06-07 04:34:45.498293+00:00, run_end_date=2024-06-07 04:34:47.917274+00:00, run_duration=2.418981, state=success, executor_state=success, try_number=1, max_tries=3, job_id=874, pool=default_pool, queue=default, priority_weight=8, operator=BashOperator, queued_dttm=2024-06-07 04:34:43.408577+00:00, queued_by_job_id=872, pid=14935
+2024-06-07 04:35:11,903 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.create_staging_table manual__2024-06-07T04:34:27.981682+00:00 [scheduled]>
+2024-06-07 04:35:11,904 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 04:35:11,907 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.create_staging_table manual__2024-06-07T04:34:27.981682+00:00 [scheduled]>
+2024-06-07 04:35:11,912 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='create_staging_table', run_id='manual__2024-06-07T04:34:27.981682+00:00', try_number=1, map_index=-1) to executor with priority 6 and queue default
+2024-06-07 04:35:11,913 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'create_staging_table', 'manual__2024-06-07T04:34:27.981682+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:35:11,915 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'create_staging_table', 'manual__2024-06-07T04:34:27.981682+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:35:15,791 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='create_staging_table', run_id='manual__2024-06-07T04:34:27.981682+00:00', try_number=1, map_index=-1)
+2024-06-07 04:35:15,796 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=create_staging_table, run_id=manual__2024-06-07T04:34:27.981682+00:00, map_index=-1, run_start_date=2024-06-07 04:35:14.395334+00:00, run_end_date=2024-06-07 04:35:15.048562+00:00, run_duration=0.653228, state=success, executor_state=success, try_number=1, max_tries=3, job_id=876, pool=default_pool, queue=default, priority_weight=6, operator=PostgresOperator, queued_dttm=2024-06-07 04:35:11.908783+00:00, queued_by_job_id=872, pid=15008
+2024-06-07 04:35:15,864 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.transfer_s3_to_redshift_staging manual__2024-06-07T04:34:27.981682+00:00 [scheduled]>
+2024-06-07 04:35:15,864 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 04:35:15,865 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.transfer_s3_to_redshift_staging manual__2024-06-07T04:34:27.981682+00:00 [scheduled]>
+2024-06-07 04:35:15,868 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='transfer_s3_to_redshift_staging', run_id='manual__2024-06-07T04:34:27.981682+00:00', try_number=1, map_index=-1) to executor with priority 5 and queue default
+2024-06-07 04:35:15,869 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'transfer_s3_to_redshift_staging', 'manual__2024-06-07T04:34:27.981682+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:35:15,871 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'transfer_s3_to_redshift_staging', 'manual__2024-06-07T04:34:27.981682+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:35:20,651 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='transfer_s3_to_redshift_staging', run_id='manual__2024-06-07T04:34:27.981682+00:00', try_number=1, map_index=-1)
+2024-06-07 04:35:20,663 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=transfer_s3_to_redshift_staging, run_id=manual__2024-06-07T04:34:27.981682+00:00, map_index=-1, run_start_date=2024-06-07 04:35:18.019850+00:00, run_end_date=2024-06-07 04:35:19.749369+00:00, run_duration=1.729519, state=success, executor_state=success, try_number=1, max_tries=3, job_id=877, pool=default_pool, queue=default, priority_weight=5, operator=S3ToRedshiftOperator, queued_dttm=2024-06-07 04:35:15.866674+00:00, queued_by_job_id=872, pid=15029
+2024-06-07 04:35:28,055 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.delete_csv_from_s3 manual__2024-06-07T04:34:27.981682+00:00 [scheduled]>
+2024-06-07 04:35:28,056 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 04:35:28,057 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.delete_csv_from_s3 manual__2024-06-07T04:34:27.981682+00:00 [scheduled]>
+2024-06-07 04:35:28,061 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='delete_csv_from_s3', run_id='manual__2024-06-07T04:34:27.981682+00:00', try_number=1, map_index=-1) to executor with priority 2 and queue default
+2024-06-07 04:35:28,061 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'delete_csv_from_s3', 'manual__2024-06-07T04:34:27.981682+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:35:28,063 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'delete_csv_from_s3', 'manual__2024-06-07T04:34:27.981682+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:35:32,526 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='delete_csv_from_s3', run_id='manual__2024-06-07T04:34:27.981682+00:00', try_number=1, map_index=-1)
+2024-06-07 04:35:32,532 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=delete_csv_from_s3, run_id=manual__2024-06-07T04:34:27.981682+00:00, map_index=-1, run_start_date=2024-06-07 04:35:30.459305+00:00, run_end_date=2024-06-07 04:35:31.725234+00:00, run_duration=1.265929, state=success, executor_state=success, try_number=1, max_tries=3, job_id=880, pool=default_pool, queue=default, priority_weight=2, operator=BashOperator, queued_dttm=2024-06-07 04:35:28.058851+00:00, queued_by_job_id=872, pid=15095
+2024-06-07 04:35:35,795 INFO - Marking run <DagRun extract_311_data_dag @ 2024-06-07 04:34:27.981682+00:00: manual__2024-06-07T04:34:27.981682+00:00, state:running, queued_at: 2024-06-07 04:34:28.023629+00:00. externally triggered: True> successful
+2024-06-07 04:35:35,796 INFO - DagRun Finished: dag_id=extract_311_data_dag, execution_date=2024-06-07 04:34:27.981682+00:00, run_id=manual__2024-06-07T04:34:27.981682+00:00, run_start_date=2024-06-07 04:34:28.685257+00:00, run_end_date=2024-06-07 04:35:35.796281+00:00, run_duration=67.111024, state=success, external_trigger=True, run_type=manual, data_interval_start=2024-06-06 00:00:00+00:00, data_interval_end=2024-06-07 00:00:00+00:00, dag_hash=19871c71c01ad779ef024e0b00f64370
+2024-06-07 04:39:40,985 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 04:39:40,988 INFO - Marked 1 SchedulerJob instances as failed
+2024-06-07 04:42:33,698 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.extract_311_data manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:42:33,698 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 04:42:33,698 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.extract_311_data manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:42:33,701 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='extract_311_data', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1) to executor with priority 9 and queue default
+2024-06-07 04:42:33,701 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'extract_311_data', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:42:33,703 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'extract_311_data', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:42:44,616 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='extract_311_data', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1)
+2024-06-07 04:42:44,621 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=extract_311_data, run_id=manual__2024-06-07T04:42:33.146453+00:00, map_index=-1, run_start_date=2024-06-07 04:42:36.082435+00:00, run_end_date=2024-06-07 04:42:44.012098+00:00, run_duration=7.929663, state=success, executor_state=success, try_number=1, max_tries=3, job_id=882, pool=default_pool, queue=default, priority_weight=9, operator=PythonOperator, queued_dttm=2024-06-07 04:42:33.699946+00:00, queued_by_job_id=872, pid=15759
+2024-06-07 04:42:44,677 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.load_to_s3 manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:42:44,677 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 04:42:44,678 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.load_to_s3 manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:42:44,679 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='load_to_s3', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1) to executor with priority 8 and queue default
+2024-06-07 04:42:44,680 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'load_to_s3', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:42:44,681 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'load_to_s3', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:42:50,134 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='load_to_s3', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1)
+2024-06-07 04:42:50,140 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=load_to_s3, run_id=manual__2024-06-07T04:42:33.146453+00:00, map_index=-1, run_start_date=2024-06-07 04:42:46.969878+00:00, run_end_date=2024-06-07 04:42:49.470169+00:00, run_duration=2.500291, state=success, executor_state=success, try_number=1, max_tries=3, job_id=883, pool=default_pool, queue=default, priority_weight=8, operator=BashOperator, queued_dttm=2024-06-07 04:42:44.678735+00:00, queued_by_job_id=872, pid=15780
+2024-06-07 04:42:50,208 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.is_file_in_s3_available manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:42:50,208 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 04:42:50,209 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.is_file_in_s3_available manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:42:50,212 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='is_file_in_s3_available', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1) to executor with priority 7 and queue default
+2024-06-07 04:42:50,212 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'is_file_in_s3_available', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:42:50,214 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'is_file_in_s3_available', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:43:14,371 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='is_file_in_s3_available', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1)
+2024-06-07 04:43:14,377 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=is_file_in_s3_available, run_id=manual__2024-06-07T04:42:33.146453+00:00, map_index=-1, run_start_date=2024-06-07 04:42:52.695842+00:00, run_end_date=2024-06-07 04:43:13.607152+00:00, run_duration=20.91131, state=success, executor_state=success, try_number=1, max_tries=3, job_id=884, pool=default_pool, queue=default, priority_weight=7, operator=S3KeySensor, queued_dttm=2024-06-07 04:42:50.209946+00:00, queued_by_job_id=872, pid=15814
+2024-06-07 04:43:14,451 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.create_staging_table manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:43:14,452 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 04:43:14,452 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.create_staging_table manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:43:14,455 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='create_staging_table', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1) to executor with priority 6 and queue default
+2024-06-07 04:43:14,456 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'create_staging_table', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:43:14,457 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'create_staging_table', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:43:17,950 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='create_staging_table', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1)
+2024-06-07 04:43:17,958 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=create_staging_table, run_id=manual__2024-06-07T04:42:33.146453+00:00, map_index=-1, run_start_date=2024-06-07 04:43:16.629629+00:00, run_end_date=2024-06-07 04:43:17.187284+00:00, run_duration=0.557655, state=success, executor_state=success, try_number=1, max_tries=3, job_id=885, pool=default_pool, queue=default, priority_weight=6, operator=PostgresOperator, queued_dttm=2024-06-07 04:43:14.453651+00:00, queued_by_job_id=872, pid=15851
+2024-06-07 04:43:18,002 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.transfer_s3_to_redshift_staging manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:43:18,002 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 04:43:18,003 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.transfer_s3_to_redshift_staging manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:43:18,005 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='transfer_s3_to_redshift_staging', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1) to executor with priority 5 and queue default
+2024-06-07 04:43:18,006 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'transfer_s3_to_redshift_staging', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:43:18,008 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'transfer_s3_to_redshift_staging', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:43:22,195 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='transfer_s3_to_redshift_staging', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1)
+2024-06-07 04:43:22,202 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=transfer_s3_to_redshift_staging, run_id=manual__2024-06-07T04:42:33.146453+00:00, map_index=-1, run_start_date=2024-06-07 04:43:19.977421+00:00, run_end_date=2024-06-07 04:43:21.444097+00:00, run_duration=1.466676, state=success, executor_state=success, try_number=1, max_tries=3, job_id=886, pool=default_pool, queue=default, priority_weight=5, operator=S3ToRedshiftOperator, queued_dttm=2024-06-07 04:43:18.004210+00:00, queued_by_job_id=872, pid=15872
+2024-06-07 04:43:22,264 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.delete_existing_records manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:43:22,265 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 04:43:22,265 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.delete_existing_records manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:43:22,268 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='delete_existing_records', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1) to executor with priority 4 and queue default
+2024-06-07 04:43:22,269 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'delete_existing_records', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:43:22,271 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'delete_existing_records', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:43:26,194 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='delete_existing_records', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1)
+2024-06-07 04:43:26,199 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=delete_existing_records, run_id=manual__2024-06-07T04:42:33.146453+00:00, map_index=-1, run_start_date=2024-06-07 04:43:24.881772+00:00, run_end_date=2024-06-07 04:43:25.631910+00:00, run_duration=0.750138, state=success, executor_state=success, try_number=1, max_tries=3, job_id=887, pool=default_pool, queue=default, priority_weight=4, operator=PostgresOperator, queued_dttm=2024-06-07 04:43:22.267130+00:00, queued_by_job_id=872, pid=15895
+2024-06-07 04:43:26,241 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.insert_new_records manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:43:26,242 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 04:43:26,242 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.insert_new_records manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:43:26,244 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='insert_new_records', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1) to executor with priority 3 and queue default
+2024-06-07 04:43:26,244 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'insert_new_records', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:43:26,245 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'insert_new_records', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:43:30,532 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='insert_new_records', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1)
+2024-06-07 04:43:30,538 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=insert_new_records, run_id=manual__2024-06-07T04:42:33.146453+00:00, map_index=-1, run_start_date=2024-06-07 04:43:28.985005+00:00, run_end_date=2024-06-07 04:43:29.713417+00:00, run_duration=0.728412, state=success, executor_state=success, try_number=1, max_tries=3, job_id=888, pool=default_pool, queue=default, priority_weight=3, operator=PostgresOperator, queued_dttm=2024-06-07 04:43:26.242932+00:00, queued_by_job_id=872, pid=15924
+2024-06-07 04:43:30,607 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.truncate_staging_table manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:43:30,607 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 04:43:30,608 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.truncate_staging_table manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:43:30,610 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='truncate_staging_table', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1) to executor with priority 2 and queue default
+2024-06-07 04:43:30,611 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'truncate_staging_table', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:43:30,613 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'truncate_staging_table', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:43:34,050 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='truncate_staging_table', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1)
+2024-06-07 04:43:34,055 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=truncate_staging_table, run_id=manual__2024-06-07T04:42:33.146453+00:00, map_index=-1, run_start_date=2024-06-07 04:43:32.790621+00:00, run_end_date=2024-06-07 04:43:33.445238+00:00, run_duration=0.654617, state=success, executor_state=success, try_number=1, max_tries=3, job_id=889, pool=default_pool, queue=default, priority_weight=2, operator=PostgresOperator, queued_dttm=2024-06-07 04:43:30.609244+00:00, queued_by_job_id=872, pid=15946
+2024-06-07 04:43:34,093 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.delete_csv_from_s3 manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:43:34,094 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 04:43:34,094 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.delete_csv_from_s3 manual__2024-06-07T04:42:33.146453+00:00 [scheduled]>
+2024-06-07 04:43:34,096 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='delete_csv_from_s3', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2024-06-07 04:43:34,096 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'delete_csv_from_s3', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:43:34,099 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'delete_csv_from_s3', 'manual__2024-06-07T04:42:33.146453+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 04:43:37,898 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='delete_csv_from_s3', run_id='manual__2024-06-07T04:42:33.146453+00:00', try_number=1, map_index=-1)
+2024-06-07 04:43:37,902 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=delete_csv_from_s3, run_id=manual__2024-06-07T04:42:33.146453+00:00, map_index=-1, run_start_date=2024-06-07 04:43:36.077982+00:00, run_end_date=2024-06-07 04:43:37.267653+00:00, run_duration=1.189671, state=success, executor_state=success, try_number=1, max_tries=3, job_id=890, pool=default_pool, queue=default, priority_weight=1, operator=BashOperator, queued_dttm=2024-06-07 04:43:34.095026+00:00, queued_by_job_id=872, pid=15967
+2024-06-07 04:43:37,940 INFO - Marking run <DagRun extract_311_data_dag @ 2024-06-07 04:42:33.146453+00:00: manual__2024-06-07T04:42:33.146453+00:00, state:running, queued_at: 2024-06-07 04:42:33.206401+00:00. externally triggered: True> successful
+2024-06-07 04:43:37,940 INFO - DagRun Finished: dag_id=extract_311_data_dag, execution_date=2024-06-07 04:42:33.146453+00:00, run_id=manual__2024-06-07T04:42:33.146453+00:00, run_start_date=2024-06-07 04:42:33.668709+00:00, run_end_date=2024-06-07 04:43:37.940823+00:00, run_duration=64.272114, state=success, external_trigger=True, run_type=manual, data_interval_start=2024-06-06 00:00:00+00:00, data_interval_end=2024-06-07 00:00:00+00:00, dag_hash=3e42518104a5ed61a6b38011b706df53
+2024-06-07 04:44:41,040 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 04:49:41,094 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 04:54:41,148 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 04:59:41,199 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 05:04:41,272 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 05:09:41,313 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 05:14:41,355 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 05:19:41,389 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 05:24:41,424 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 05:29:41,460 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 05:34:41,521 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 05:39:41,563 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 05:44:41,603 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 05:49:41,673 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 05:54:41,719 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 05:59:41,755 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 06:04:41,792 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 06:09:41,830 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 06:14:41,891 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 06:19:41,950 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 06:24:42,030 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 06:29:42,065 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 06:34:42,115 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 06:39:42,160 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 06:44:42,212 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 06:49:42,260 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 06:54:42,297 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 06:59:42,333 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 07:04:42,391 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 07:09:42,447 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 07:14:42,492 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 07:19:42,532 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 07:24:42,583 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 07:29:42,617 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 07:34:42,657 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 07:39:42,691 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 07:44:42,745 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 07:49:42,784 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 07:54:42,825 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 07:59:42,910 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 08:04:42,937 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 08:09:42,976 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 08:14:43,052 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 08:19:43,099 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 08:24:43,133 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 08:29:43,177 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 08:34:43,231 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 08:39:43,276 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 08:44:43,318 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 08:49:43,355 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 08:54:43,394 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 08:59:43,447 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 09:04:43,483 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 09:09:43,521 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 09:14:43,562 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 09:19:43,596 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 09:24:43,649 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 09:29:43,707 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 09:34:43,740 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 09:39:43,821 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 09:44:43,864 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 09:49:43,899 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 09:54:43,936 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 09:59:44,022 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 10:04:44,056 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 10:09:44,105 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 10:14:44,161 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 10:19:44,217 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 10:24:44,267 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 10:29:44,324 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 10:34:44,430 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 10:39:44,481 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 10:44:44,518 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 10:49:44,561 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 10:54:44,606 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 10:59:44,668 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 11:04:44,713 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 11:09:44,749 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 11:14:44,809 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 11:19:44,865 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 11:24:44,994 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 11:28:06,156 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.extract_311_data manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:28:06,156 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 11:28:06,156 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.extract_311_data manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:28:06,158 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='extract_311_data', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1) to executor with priority 9 and queue default
+2024-06-07 11:28:06,159 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'extract_311_data', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:28:06,160 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'extract_311_data', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:28:16,408 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='extract_311_data', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1)
+2024-06-07 11:28:16,412 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=extract_311_data, run_id=manual__2024-06-07T11:28:06.094709+00:00, map_index=-1, run_start_date=2024-06-07 11:28:08.292112+00:00, run_end_date=2024-06-07 11:28:15.767936+00:00, run_duration=7.475824, state=success, executor_state=success, try_number=1, max_tries=3, job_id=891, pool=default_pool, queue=default, priority_weight=9, operator=PythonOperator, queued_dttm=2024-06-07 11:28:06.157572+00:00, queued_by_job_id=872, pid=29539
+2024-06-07 11:28:16,465 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.load_to_s3 manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:28:16,465 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 11:28:16,465 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.load_to_s3 manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:28:16,467 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='load_to_s3', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1) to executor with priority 8 and queue default
+2024-06-07 11:28:16,467 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'load_to_s3', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:28:16,469 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'load_to_s3', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:28:22,593 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='load_to_s3', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1)
+2024-06-07 11:28:22,603 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=load_to_s3, run_id=manual__2024-06-07T11:28:06.094709+00:00, map_index=-1, run_start_date=2024-06-07 11:28:18.862549+00:00, run_end_date=2024-06-07 11:28:21.256770+00:00, run_duration=2.394221, state=success, executor_state=success, try_number=1, max_tries=3, job_id=892, pool=default_pool, queue=default, priority_weight=8, operator=BashOperator, queued_dttm=2024-06-07 11:28:16.466375+00:00, queued_by_job_id=872, pid=29561
+2024-06-07 11:28:22,676 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.is_file_in_s3_available manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:28:22,676 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 11:28:22,676 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.is_file_in_s3_available manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:28:22,679 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='is_file_in_s3_available', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1) to executor with priority 7 and queue default
+2024-06-07 11:28:22,680 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'is_file_in_s3_available', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:28:22,681 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'is_file_in_s3_available', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:28:46,629 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='is_file_in_s3_available', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1)
+2024-06-07 11:28:46,639 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=is_file_in_s3_available, run_id=manual__2024-06-07T11:28:06.094709+00:00, map_index=-1, run_start_date=2024-06-07 11:28:24.817109+00:00, run_end_date=2024-06-07 11:28:45.900192+00:00, run_duration=21.083083, state=success, executor_state=success, try_number=1, max_tries=3, job_id=893, pool=default_pool, queue=default, priority_weight=7, operator=S3KeySensor, queued_dttm=2024-06-07 11:28:22.677597+00:00, queued_by_job_id=872, pid=29602
+2024-06-07 11:28:46,701 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.create_staging_table manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:28:46,701 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 11:28:46,701 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.create_staging_table manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:28:46,704 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='create_staging_table', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1) to executor with priority 6 and queue default
+2024-06-07 11:28:46,705 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'create_staging_table', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:28:46,706 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'create_staging_table', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:28:50,808 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='create_staging_table', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1)
+2024-06-07 11:28:50,814 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=create_staging_table, run_id=manual__2024-06-07T11:28:06.094709+00:00, map_index=-1, run_start_date=2024-06-07 11:28:49.073505+00:00, run_end_date=2024-06-07 11:28:50.037680+00:00, run_duration=0.964175, state=success, executor_state=success, try_number=1, max_tries=3, job_id=894, pool=default_pool, queue=default, priority_weight=6, operator=PostgresOperator, queued_dttm=2024-06-07 11:28:46.702798+00:00, queued_by_job_id=872, pid=29633
+2024-06-07 11:28:50,865 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.transfer_s3_to_redshift_staging manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:28:50,865 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 11:28:50,865 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.transfer_s3_to_redshift_staging manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:28:50,868 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='transfer_s3_to_redshift_staging', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1) to executor with priority 5 and queue default
+2024-06-07 11:28:50,868 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'transfer_s3_to_redshift_staging', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:28:50,870 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'transfer_s3_to_redshift_staging', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:29:24,187 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='transfer_s3_to_redshift_staging', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1)
+2024-06-07 11:29:24,192 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=transfer_s3_to_redshift_staging, run_id=manual__2024-06-07T11:28:06.094709+00:00, map_index=-1, run_start_date=2024-06-07 11:28:53.799056+00:00, run_end_date=2024-06-07 11:29:23.600532+00:00, run_duration=29.801476, state=success, executor_state=success, try_number=1, max_tries=3, job_id=895, pool=default_pool, queue=default, priority_weight=5, operator=S3ToRedshiftOperator, queued_dttm=2024-06-07 11:28:50.866796+00:00, queued_by_job_id=872, pid=29663
+2024-06-07 11:29:24,269 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.delete_existing_records manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:29:24,270 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 11:29:24,270 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.delete_existing_records manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:29:24,272 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='delete_existing_records', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1) to executor with priority 4 and queue default
+2024-06-07 11:29:24,273 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'delete_existing_records', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:29:24,274 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'delete_existing_records', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:29:37,113 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='delete_existing_records', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1)
+2024-06-07 11:29:37,126 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=delete_existing_records, run_id=manual__2024-06-07T11:28:06.094709+00:00, map_index=-1, run_start_date=2024-06-07 11:29:26.460973+00:00, run_end_date=2024-06-07 11:29:35.984018+00:00, run_duration=9.523045, state=success, executor_state=success, try_number=1, max_tries=3, job_id=896, pool=default_pool, queue=default, priority_weight=4, operator=PostgresOperator, queued_dttm=2024-06-07 11:29:24.271291+00:00, queued_by_job_id=872, pid=29705
+2024-06-07 11:29:37,229 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.insert_new_records manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:29:37,229 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 11:29:37,230 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.insert_new_records manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:29:37,231 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='insert_new_records', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1) to executor with priority 3 and queue default
+2024-06-07 11:29:37,232 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'insert_new_records', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:29:37,233 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'insert_new_records', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:29:49,793 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='insert_new_records', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1)
+2024-06-07 11:29:49,812 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=insert_new_records, run_id=manual__2024-06-07T11:28:06.094709+00:00, map_index=-1, run_start_date=2024-06-07 11:29:39.269383+00:00, run_end_date=2024-06-07 11:29:49.111125+00:00, run_duration=9.841742, state=success, executor_state=success, try_number=1, max_tries=3, job_id=897, pool=default_pool, queue=default, priority_weight=3, operator=PostgresOperator, queued_dttm=2024-06-07 11:29:37.230604+00:00, queued_by_job_id=872, pid=29729
+2024-06-07 11:29:49,834 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 11:29:49,871 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.truncate_staging_table manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:29:49,871 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 11:29:49,872 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.truncate_staging_table manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:29:49,874 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='truncate_staging_table', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1) to executor with priority 2 and queue default
+2024-06-07 11:29:49,874 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'truncate_staging_table', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:29:49,875 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'truncate_staging_table', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:29:53,963 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='truncate_staging_table', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1)
+2024-06-07 11:29:53,971 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=truncate_staging_table, run_id=manual__2024-06-07T11:28:06.094709+00:00, map_index=-1, run_start_date=2024-06-07 11:29:51.916963+00:00, run_end_date=2024-06-07 11:29:52.811547+00:00, run_duration=0.894584, state=success, executor_state=success, try_number=1, max_tries=3, job_id=898, pool=default_pool, queue=default, priority_weight=2, operator=PostgresOperator, queued_dttm=2024-06-07 11:29:49.872806+00:00, queued_by_job_id=872, pid=29755
+2024-06-07 11:29:54,133 INFO - 1 tasks up for execution:
+	<TaskInstance: extract_311_data_dag.delete_csv_from_s3 manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:29:54,133 INFO - DAG extract_311_data_dag has 0/16 running and queued tasks
+2024-06-07 11:29:54,133 INFO - Setting the following tasks to queued state:
+	<TaskInstance: extract_311_data_dag.delete_csv_from_s3 manual__2024-06-07T11:28:06.094709+00:00 [scheduled]>
+2024-06-07 11:29:54,138 INFO - Sending TaskInstanceKey(dag_id='extract_311_data_dag', task_id='delete_csv_from_s3', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1) to executor with priority 1 and queue default
+2024-06-07 11:29:54,138 INFO - Adding to queue: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'delete_csv_from_s3', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:29:54,142 INFO - Executing command: ['airflow', 'tasks', 'run', 'extract_311_data_dag', 'delete_csv_from_s3', 'manual__2024-06-07T11:28:06.094709+00:00', '--local', '--subdir', 'DAGS_FOLDER/311-analytics-dag.py']
+2024-06-07 11:29:57,894 INFO - Received executor event with state success for task instance TaskInstanceKey(dag_id='extract_311_data_dag', task_id='delete_csv_from_s3', run_id='manual__2024-06-07T11:28:06.094709+00:00', try_number=1, map_index=-1)
+2024-06-07 11:29:57,899 INFO - TaskInstance Finished: dag_id=extract_311_data_dag, task_id=delete_csv_from_s3, run_id=manual__2024-06-07T11:28:06.094709+00:00, map_index=-1, run_start_date=2024-06-07 11:29:56.098286+00:00, run_end_date=2024-06-07 11:29:57.276100+00:00, run_duration=1.177814, state=success, executor_state=success, try_number=1, max_tries=3, job_id=899, pool=default_pool, queue=default, priority_weight=1, operator=BashOperator, queued_dttm=2024-06-07 11:29:54.136257+00:00, queued_by_job_id=872, pid=29784
+2024-06-07 11:29:57,940 INFO - Marking run <DagRun extract_311_data_dag @ 2024-06-07 11:28:06.094709+00:00: manual__2024-06-07T11:28:06.094709+00:00, state:running, queued_at: 2024-06-07 11:28:06.107584+00:00. externally triggered: True> successful
+2024-06-07 11:29:57,940 INFO - DagRun Finished: dag_id=extract_311_data_dag, execution_date=2024-06-07 11:28:06.094709+00:00, run_id=manual__2024-06-07T11:28:06.094709+00:00, run_start_date=2024-06-07 11:28:06.132013+00:00, run_end_date=2024-06-07 11:29:57.940923+00:00, run_duration=111.80891, state=success, external_trigger=True, run_type=manual, data_interval_start=2024-06-06 00:00:00+00:00, data_interval_end=2024-06-07 00:00:00+00:00, dag_hash=693e109453d2ac1236e5d6b0047a176d
+2024-06-07 11:34:49,853 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 11:39:49,897 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 11:44:49,946 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 11:49:49,970 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 11:54:50,020 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 11:59:50,075 INFO - Adopting or resetting orphaned tasks for active dag runs
+2024-06-07 12:04:50,136 INFO - Adopting or resetting orphaned tasks for active dag runs
